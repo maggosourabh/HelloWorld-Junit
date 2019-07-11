@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Initialize') {
 	steps {
+	    sh 'export PATH=$PATH:/opt/apache-maven-3.5.4/bin'
 	    sh 'mvn --version'
 	   }
 	}
