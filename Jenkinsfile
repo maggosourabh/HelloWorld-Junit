@@ -13,8 +13,14 @@ pipeline {
 	stage('Build') {
 	steps {
 	    echo 'Building application package..'
-	    sh 'mvn clean package install'
+	    sh 'mvn clean compile'
+            }
+        }
+        stage('Test') {
+	steps {
+	    echo 'Starting Unit Test phase..'
+	    sh 'mvn test'
+	    }
 	}
-    }
   }
 }
