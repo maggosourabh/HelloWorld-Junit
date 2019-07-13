@@ -22,5 +22,11 @@ pipeline {
 	    sh 'mvn test'
 	    }
 	}
+	stage('Packaging') {
+	steps {
+	    echo 'Starting packaging phase..'
+	    sh 'mvn package verify install'
+	    }
+	}
   }
 }
